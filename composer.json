@@ -1,0 +1,19 @@
+{
+    "name": "wupz/dingtalk-bot",
+    "description": "Dingtalk Bot",
+    "authors": [
+        {
+            "name": "EvanWu",
+            "email": "cnwupz@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload":{
+        "psr-4": {
+            "wupz\\": "src/wupz"
+        }
+    },
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
