@@ -1,8 +1,5 @@
 <?php
-
-
 namespace wupz;
-
 
 class Webhook
 {
@@ -20,7 +17,7 @@ class Webhook
     public function send(string $content, array $mobiles)
     {
         list($s1, $s2) = explode(' ', microtime());
-        $timestamp = (float)sprintf('%.0f', (floatval($s1) + floatval($s2)) * 1000);
+        $timestamp = (float) sprintf('%.0f', (floatval($s1) + floatval($s2)) * 1000);
         $signStr = base64_encode(hash_hmac('sha256', $timestamp . "\n" . $this->secret, $this->secret, true));
         $signStr = utf8_encode(urlencode($signStr));
         $url = "https://oapi.dingtalk.com/robot/send?access_token=" . $this->access_token . '&timestamp=' . $timestamp . '&sign=' . $signStr;
